@@ -1,0 +1,8 @@
+.journal-entry {
+  display: flex;
+  flex-direction: column;
+}
+
+.journal-entry-item {
+  padding: 1em;
+}
