@@ -18,8 +18,8 @@ const render = () => {
         <input id ="journalTopic" type="text">
       </div>
       <div class="journal-entry-item">
-        <label for="mood">Mood</label>
-        <select name="mood" id="moodSelect">
+      <label for="mood">Mood</label>
+        <select name="mood" id="moodSelect" class="browser-default">
           <option value="empty"></option>
           <option value="happy">Happy</option>
           <option value="sad">Sad</option>
@@ -33,7 +33,7 @@ const render = () => {
         <textarea id="entryText" cols="30" rows="10"></textarea>
       </div>
     </div>
-    <button id="addJournal">Submit</button>
+    <button class="btn" id="addJournal">Submit</button>
   </form>
   `;
   return journalForm;
