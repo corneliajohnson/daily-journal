@@ -1,3 +1,4 @@
+const eventHub = document.querySelector(".container");
 let journalsArray = [];
 
 export const useJournalEntries = () => {
