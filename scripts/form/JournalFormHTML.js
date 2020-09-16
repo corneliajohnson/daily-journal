@@ -1,3 +1,5 @@
+import { Moods } from "./Moods.js";
+
 export const JournalFormHTML = () => {
   const journalForm = document.getElementById("journalForm");
   journalForm.innerHTML = `
@@ -15,12 +17,10 @@ export const JournalFormHTML = () => {
       <div class="journal-entry-item">
       <label for="mood">Mood</label>
         <select name="mood" id="moodSelect" class="browser-default">
-          <option value="empty"></option>
-          <option value="happy">Happy</option>
-          <option value="sad">Sad</option>
-          <option value="excited">Excited</option>
-          <option value="confused">Confused</option>
-          <option value="nervous">Nervous</option>
+        <option value="empty"></option>
+          ${Moods.map((mood) => {
+            return `<option id="mood--${mood.id}" value="mood.name">${mood.name}</option>`;
+          })}
         </select>
       </div>
       <div class="journal-entry-item">

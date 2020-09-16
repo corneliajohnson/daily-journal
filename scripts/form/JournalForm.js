@@ -5,8 +5,6 @@ const eventHub = document.querySelector(".container");
 
 eventHub.addEventListener("click", (clickEvent) => {
   if (clickEvent.target.id === "addJournal") {
-    event.preventDefault();
-
     const newEntry = {
       entryDate: document.getElementById("journalDate").value,
       entryTopic: document.getElementById("journalTopic").value,
