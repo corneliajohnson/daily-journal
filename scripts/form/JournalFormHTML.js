@@ -1,5 +1,11 @@
-import { getMoods, useMoods } from "../JournalDataProvider.js";
+import {
+  getMoods,
+  useMoods,
+  getInstructors,
+  useInstructors,
+} from "../JournalDataProvider.js";
 let moodsArray = [];
+let instructorsArray = [];
 
 const render = () => {
   const journalForm = document.getElementById("journalForm");
@@ -14,6 +20,15 @@ const render = () => {
       <div class="journal-entry-item">
         <label for="topic">Concepts Covered</label>
         <input id ="journalTopic" type="text">
+      </div>
+      <div class="journal-entry-item">
+      <label for="instructor">Instructors</label>
+        <select name="instructor" id="instructorSelect" class="browser-default">
+        <option value="empty"></option>
+          ${instructorsArray.map((instructor) => {
+            return `<option value="${instructor.id}">${instructor.first_name} ${instructor.last_name}</option>`;
+          })}
+        </select>
       </div>
       <div class="journal-entry-item">
       <label for="mood">Mood</label>
@@ -36,8 +51,11 @@ const render = () => {
 };
 
 export const JournalFormHTML = () => {
-  getMoods().then(() => {
-    moodsArray = useMoods();
-    render();
-  });
+  getMoods()
+    .then(getInstructors)
+    .then(() => {
+      instructorsArray = useInstructors();
+      moodsArray = useMoods();
+      render();
+    });
 };

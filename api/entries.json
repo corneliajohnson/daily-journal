@@ -2,11 +2,16 @@
   "entries": [
     {
       "entryDate": "2020-09-17",
-      "entryTopic": "Json",
-      "entryText": "Added an object to json",
+      "entryTopic": "Test",
+      "entryText": "Json",
       "mood": {
-        "id": 6,
-        "label": "Ecstatic"
+        "id": 3,
+        "label": "Calm"
+      },
+      "instructor": {
+        "id": 1,
+        "first_name": "Brenda",
+        "last_name": "Long"
       },
       "id": 1
     }
@@ -75,6 +80,23 @@
     {
       "id": 16,
       "label": "Stressed"
+    }
+  ],
+  "instructors": [
+    {
+      "id": 1,
+      "first_name": "Brenda",
+      "last_name": "Long"
+    },
+    {
+      "id": 2,
+      "first_name": "Adam",
+      "last_name": "Sheaffer"
+    },
+    {
+      "id": 3,
+      "first_name": "Sage",
+      "last_name": "Klein"
     }
   ]
 }

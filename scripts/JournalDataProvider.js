@@ -1,6 +1,7 @@
 const eventHub = document.querySelector(".container");
 let journalsArray = [];
 let moodsArray = [];
+let instructorsArray = [];
 
 export const useJournalEntries = () => {
   const sortedByDate = journalsArray.sort(
@@ -12,6 +13,9 @@ export const useJournalEntries = () => {
 
 export const useMoods = () => {
   return moodsArray.slice();
+};
+export const useInstructors = () => {
+  return instructorsArray.slice();
 };
 
 const dispatchStateChangeEvent = () => {
@@ -44,4 +48,10 @@ export const getMoods = () => {
     .then((parsedMoods) => {
       moodsArray = parsedMoods;
     });
+};
+
+export const getInstructors = () => {
+  return fetch("http://localhost:8088/instructors")
+    .then((response) => response.json())
+    .then((parsedInstructors) => (instructorsArray = parsedInstructors));
 };
