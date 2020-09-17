@@ -1,6 +1,7 @@
-import { Moods } from "./Moods.js";
+import { getMoods, useMoods } from "../JournalDataProvider.js";
+let moodsArray = [];
 
-export const JournalFormHTML = () => {
+const render = () => {
   const journalForm = document.getElementById("journalForm");
   journalForm.innerHTML = `
   <h3>What on Your Mind Today?</h3>
@@ -18,8 +19,8 @@ export const JournalFormHTML = () => {
       <label for="mood">Mood</label>
         <select name="mood" id="moodSelect" class="browser-default">
         <option value="empty"></option>
-          ${Moods.map((mood) => {
-            return `<option id="mood--${mood.id}" value="mood.name">${mood.name}</option>`;
+          ${moodsArray.map((mood) => {
+            return `<option value="${mood.id}">${mood.label}</option>`;
           })}
         </select>
       </div>
@@ -32,4 +33,11 @@ export const JournalFormHTML = () => {
   </form>
   `;
   return journalForm;
+};
+
+export const JournalFormHTML = () => {
+  getMoods().then(() => {
+    moodsArray = useMoods();
+    render();
+  });
 };

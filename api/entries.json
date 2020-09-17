@@ -13,6 +13,79 @@
       "entryMood": "nervous",
       "entryText": "I feel like I am getting better with every exercise",
       "id": 2
+    },
+    {
+      "entryDate": "2020-09-17",
+      "entryTopic": "TEST",
+      "entryMood": "3",
+      "entryText": "Hello",
+      "id": 3
+    }
+  ],
+  "moods": [
+    {
+      "id": 1,
+      "label": "Amused"
+    },
+    {
+      "id": 2,
+      "label": "Blissful"
+    },
+    {
+      "id": 3,
+      "label": "Calm"
+    },
+    {
+      "id": 4,
+      "label": "Content"
+    },
+    {
+      "id": 5,
+      "label": "Dreamy"
+    },
+    {
+      "id": 6,
+      "label": "Ecstatic"
+    },
+    {
+      "id": 7,
+      "label": "Energetic"
+    },
+    {
+      "id": 8,
+      "label": "Good"
+    },
+    {
+      "id": 9,
+      "label": "Happy"
+    },
+    {
+      "id": 10,
+      "label": "Optimistic"
+    },
+    {
+      "id": 11,
+      "label": "Annoyed"
+    },
+    {
+      "id": 12,
+      "label": "Bad"
+    },
+    {
+      "id": 13,
+      "label": "Cracky"
+    },
+    {
+      "id": 14,
+      "label": "Fustrated"
+    },
+    {
+      "id": 15,
+      "label": "Restless"
+    },
+    {
+      "id": 16,
+      "label": "Stressed"
     }
   ]
 }
