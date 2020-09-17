@@ -2,9 +2,12 @@
   "entries": [
     {
       "entryDate": "2020-09-17",
-      "entryTopic": "Test",
-      "entryMoodId": 3,
-      "entryText": "Test",
+      "entryTopic": "Json",
+      "entryText": "Added an object to json",
+      "mood": {
+        "id": 6,
+        "label": "Ecstatic"
+      },
       "id": 1
     }
   ],
