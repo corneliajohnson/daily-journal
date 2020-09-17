@@ -1,22 +1,29 @@
-import { useJournalEntries, getEntries } from "./JournalDataProvider.js";
+import {
+  useJournalEntries,
+  getEntries,
+  getMoods,
+  useMoods,
+} from "./JournalDataProvider.js";
 import { JournalEntryComponent } from "./JournalEntry.js";
 
-// DOM reference to where all entries will be rendered
-let entriesArray = [];
-
-const render = (theJournalArray) => {
+const render = (theJournalArray, theMoodArray) => {
   const contentTarget = document.querySelector("#entryLog");
-  contentTarget.innerHTML += `${theJournalArray
-    .map((entry) => JournalEntryComponent(entry))
-    .join("")}`;
 
-  return contentTarget;
+  contentTarget.innerHTML += theJournalArray.map((entry) => {
+    const matchingMood = theMoodArray.find(
+      (mood) => mood.id === entry.entryMoodId
+    );
+    return JournalEntryComponent(entry, matchingMood);
+  });
 };
 
 export const EntryListComponent = () => {
   // Use the journal entry data from the data provider component
-  getEntries().then(() => {
-    entriesArray = useJournalEntries();
-    render(entriesArray);
-  });
+  getEntries()
+    .then(getMoods)
+    .then(() => {
+      let entriesArray = useJournalEntries();
+      let moodsArray = useMoods();
+      render(entriesArray, moodsArray);
+    });
 };

@@ -1,25 +1,11 @@
 {
   "entries": [
     {
-      "entryDate": "2020-09-01",
-      "entryTopic": "Entry Test",
-      "entryMood": "happy",
-      "entryText": "Entry TEST TEST",
-      "id": 1
-    },
-    {
-      "entryDate": "2020-09-04",
-      "entryTopic": "Learned Post Method",
-      "entryMood": "nervous",
-      "entryText": "I feel like I am getting better with every exercise",
-      "id": 2
-    },
-    {
       "entryDate": "2020-09-17",
-      "entryTopic": "TEST",
-      "entryMood": "3",
-      "entryText": "Hello",
-      "id": 3
+      "entryTopic": "Test",
+      "entryMoodId": 3,
+      "entryText": "Test",
+      "id": 1
     }
   ],
   "moods": [

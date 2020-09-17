@@ -8,7 +8,7 @@ eventHub.addEventListener("click", (clickEvent) => {
     const newEntry = {
       entryDate: document.getElementById("journalDate").value,
       entryTopic: document.getElementById("journalTopic").value,
-      entryMood: document.getElementById("moodSelect").value,
+      entryMoodId: parseInt(document.getElementById("moodSelect").value),
       entryText: document.getElementById("entryText").value,
     };
     saveJournalEntry(newEntry);
