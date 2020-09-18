@@ -12,3 +12,8 @@
   text-align: center;
   padding: 1em;
 }
+
+.journalEntry {
+  display: flex;
+  justify-content: space-between;
+}
