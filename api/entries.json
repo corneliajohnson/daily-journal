@@ -14,6 +14,66 @@
         "last_name": "Long"
       },
       "id": 1
+    },
+    {
+      "entryDate": "2020-09-09",
+      "entryTopic": "Test",
+      "entryText": "Test",
+      "mood": {
+        "id": 2,
+        "label": "Blissful"
+      },
+      "instructor": {
+        "id": 2,
+        "first_name": "Adam",
+        "last_name": "Sheaffer"
+      },
+      "id": 2
+    },
+    {
+      "entryDate": "2020-09-21",
+      "entryTopic": "test",
+      "entryText": "Test",
+      "mood": {
+        "id": 5,
+        "label": "Dreamy"
+      },
+      "instructor": {
+        "id": 1,
+        "first_name": "Brenda",
+        "last_name": "Long"
+      },
+      "id": 3
+    },
+    {
+      "entryDate": "2020-09-15",
+      "entryTopic": "test",
+      "entryText": "rrrr",
+      "mood": {
+        "id": 2,
+        "label": "Blissful"
+      },
+      "instructor": {
+        "id": 1,
+        "first_name": "Brenda",
+        "last_name": "Long"
+      },
+      "id": 4
+    },
+    {
+      "entryDate": "2020-09-09",
+      "entryTopic": "rrrr",
+      "entryText": "ffffff",
+      "mood": {
+        "id": 8,
+        "label": "Good"
+      },
+      "instructor": {
+        "id": 3,
+        "first_name": "Sage",
+        "last_name": "Klein"
+      },
+      "id": 5
     }
   ],
   "moods": [

@@ -36,3 +36,18 @@ eventHub.addEventListener("click", (event) => {
     deleteJournalEntry(id);
   }
 });
+
+//adds filters radio buttons on dom
+eventHub.addEventListener("change", (e) => {
+  let entriesArray = useJournalEntries();
+  if (e.target.name === "moodFilter") {
+    if (e.target.value === "all") {
+      render(entriesArray);
+    } else {
+      const filteredEntries = entriesArray.filter((entry) => {
+        return entry.mood.id === parseInt(e.target.value);
+      });
+      render(filteredEntries);
+    }
+  }
+});

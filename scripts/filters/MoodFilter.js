@@ -9,6 +9,9 @@ export const MoodFilter = (allMoods) => {
                   `;
         })
         .join("")}
+        <input type="radio" name="moodFilter" value="all"/>
+        <label for="moodFilter--all">All</label>
+                  
   </fieldset>
   `;
 };
