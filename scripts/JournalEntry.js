@@ -10,6 +10,9 @@ export const JournalEntryComponent = (entry) => {
     entry.mood.label
   }</p>
           <p class="entry--body">${entry.entryText}</p>
+          <button type="button" class="btn" id="deleteEntry--${
+            entry.id
+          }">Delete</button>
           <hr>
       </section>
   `;

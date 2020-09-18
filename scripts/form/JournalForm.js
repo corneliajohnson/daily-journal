@@ -12,6 +12,7 @@ const eventHub = document.querySelector(".container");
 
 eventHub.addEventListener("click", (clickEvent) => {
   if (clickEvent.target.id === "addJournal") {
+    clickEvent.preventDefault();
     const matchingMood = moodsArray.find(
       (mood) =>
         mood.id === parseInt(document.getElementById("moodSelect").value)

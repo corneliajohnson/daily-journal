@@ -14,6 +14,21 @@
         "last_name": "Long"
       },
       "id": 1
+    },
+    {
+      "entryDate": "2020-09-18",
+      "entryTopic": "Deleting post",
+      "entryText": "Deleting post",
+      "mood": {
+        "id": 8,
+        "label": "Good"
+      },
+      "instructor": {
+        "id": 1,
+        "first_name": "Brenda",
+        "last_name": "Long"
+      },
+      "id": 2
     }
   ],
   "moods": [
