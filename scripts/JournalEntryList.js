@@ -52,6 +52,6 @@ eventHub.addEventListener("change", (e) => {
       });
       render(filteredEntries);
     }
-    radioMessage.innerHTML = `Mood: ${e.target.nextSibling.nextSibling.innerHTML}`;
+    radioMessage.innerHTML = `<h5>Mood: ${e.target.nextSibling.nextSibling.innerHTML}</h5>`;
   }
 });

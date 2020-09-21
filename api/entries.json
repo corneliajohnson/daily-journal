@@ -7,6 +7,14 @@
       "moodId": 10,
       "instructorId": 2,
       "id": 1
+    },
+    {
+      "entryDate": "2020-09-15",
+      "entryTopic": "Test",
+      "entryText": "Test",
+      "moodId": 4,
+      "instructorId": 3,
+      "id": 2
     }
   ],
   "moods": [

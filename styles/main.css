@@ -16,4 +16,38 @@
 .journalEntry {
   display: flex;
   justify-content: space-between;
+  padding: 1em;
+}
+
+.moodBtns {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.moodBtn {
+  display: flex;
+  margin-right: 1em;
+  width: 12%;
+}
+
+.journal-dropdowns {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.journal-dropdown {
+  width: 50%;
+}
+
+.journal-dropdown select,
+.journal-dropdown input {
+  width: 100%;
+}
+
+#entryText {
+  width: 100%;
+}
+
+.journalEntry:hover {
+  border: 2px solid lightgray;
 }
