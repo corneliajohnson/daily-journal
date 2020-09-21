@@ -2,6 +2,8 @@ export const MoodFilter = (allMoods) => {
   return `
   <fieldset class="fieldset">
       <legend>Filter Journal Entries by Mood</legend>
+      <input type="radio" name="moodFilter" value="all" checked="checked"/>
+      <label for="moodFilter--all">All</label>
       ${allMoods
         .map((mood) => {
           return `<input type="radio" name="moodFilter" value="${mood.id}"/>
@@ -9,9 +11,7 @@ export const MoodFilter = (allMoods) => {
                   `;
         })
         .join("")}
-        <input type="radio" name="moodFilter" value="all"/>
-        <label for="moodFilter--all">All</label>
-        <div id="radioMessage"></div>
+        <div id="radioMessage">Mood: All</div>
   </fieldset>
   `;
 };

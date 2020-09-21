@@ -45,7 +45,6 @@ eventHub.addEventListener("change", (e) => {
   const radioMessage = document.querySelector("#radioMessage");
   if (e.target.name === "moodFilter") {
     if (e.target.value === "all") {
-      radioMessage.innerHTML = "All Entries";
       render(entriesArray);
     } else {
       const filteredEntries = entriesArray.filter((entry) => {
@@ -53,5 +52,6 @@ eventHub.addEventListener("change", (e) => {
       });
       render(filteredEntries);
     }
+    radioMessage.innerHTML = `Mood: ${e.target.nextSibling.nextSibling.innerHTML}`;
   }
 });
