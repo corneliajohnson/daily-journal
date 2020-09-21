@@ -18,10 +18,12 @@ const render = (theJournalArray) => {
 
 export const EntryListComponent = () => {
   // Use the journal entry data from the data provider component
-  getEntries().then(() => {
-    let entriesArray = useJournalEntries();
-    render(entriesArray);
-  });
+  getEntries()
+    .then(getEntries)
+    .then(() => {
+      let entriesArray = useJournalEntries();
+      render(entriesArray);
+    });
 };
 
 eventHub.addEventListener("journalStateChanged", () => {
@@ -40,8 +42,10 @@ eventHub.addEventListener("click", (event) => {
 //adds filters radio buttons on dom
 eventHub.addEventListener("change", (e) => {
   let entriesArray = useJournalEntries();
+  const radioMessage = document.querySelector("#radioMessage");
   if (e.target.name === "moodFilter") {
     if (e.target.value === "all") {
+      radioMessage.innerHTML = "All Entries";
       render(entriesArray);
     } else {
       const filteredEntries = entriesArray.filter((entry) => {
