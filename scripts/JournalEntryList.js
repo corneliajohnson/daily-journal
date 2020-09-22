@@ -2,6 +2,7 @@ import {
   useJournalEntries,
   getEntries,
   deleteJournalEntry,
+  getSeingleEntry,
 } from "./JournalDataProvider.js";
 import { JournalEntryComponent } from "./JournalEntry.js";
 const eventHub = document.querySelector(".container");
@@ -29,6 +30,18 @@ export const EntryListComponent = () => {
 eventHub.addEventListener("journalStateChanged", () => {
   let entriesArray = useJournalEntries();
   render(entriesArray);
+});
+
+eventHub.addEventListener("click", (clickEvent) => {
+  if (clickEvent.target.id.startsWith("editEntry--")) {
+    const [perfix, entryId] = clickEvent.target.id.split("--");
+    const customEvent = new CustomEvent("editSelected", {
+      detail: {
+        JournalEntryId: entryId,
+      },
+    });
+    eventHub.dispatchEvent(customEvent);
+  }
 });
 
 eventHub.addEventListener("click", (event) => {

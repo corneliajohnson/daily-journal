@@ -10,10 +10,13 @@ export const JournalEntryComponent = (entry) => {
           <p>${new Date(entry.entryDate).toDateString()}: ${
     entry.mood.label
   }</p>
-          <p class="entry--body">${entry.entryText}</p>
+          <p class="entry--body${entry.id}">${entry.entryText}</p>
           </div>
           <div>
-          <button type="button" class="btn red" id="deleteEntry--${
+          <button type="button" class="btn" id="editEntry--${
+            entry.id
+          }">Edit</button>
+          <button type="button" class="btn" id="deleteEntry--${
             entry.id
           }">Delete</button>
           </div>

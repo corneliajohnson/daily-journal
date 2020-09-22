@@ -46,7 +46,9 @@ const render = () => {
         <textarea id="entryText" cols="30" rows="10"></textarea>
       </div>
     </div>
+    <div id="entryButton">
     <button type="button" class="btn" id="addJournal">Submit</button>
+    </div>
   </form>
   `;
   return journalForm;
