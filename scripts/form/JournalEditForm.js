@@ -1,6 +1,7 @@
 import { getSeingleEntry, getUpdateEntry } from "../JournalDataProvider.js";
 
 const eventHub = document.querySelector(".container");
+let selectedObj = {};
 
 eventHub.addEventListener("editSelected", (event) => {
   document.getElementById("entryButton").innerHTML = `
@@ -10,7 +11,7 @@ eventHub.addEventListener("editSelected", (event) => {
   const entryId = parseInt(event.detail.JournalEntryId);
   //add the values to all he fields
   getSeingleEntry(entryId).then((responseObj) => {
-    console.log(responseObj);
+    selectedObj = { ...responseObj };
     document.querySelector("#entryText").innerHTML = `${responseObj.entryText}`;
     document.getElementById("journalDate").value = responseObj.entryDate;
     document.getElementById("journalTopic").value = responseObj.entryTopic;
@@ -36,6 +37,8 @@ eventHub.addEventListener("editSelected", (event) => {
         ),
       };
       getUpdateEntry(newEntry, entryId);
+    } else if (clickEvent.target.id === "cancelEditBtn") {
+      getUpdateEntry(selectedObj, entryId);
     }
   });
 });
