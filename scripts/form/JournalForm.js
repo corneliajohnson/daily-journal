@@ -4,6 +4,7 @@ import {
   getInstructors,
   getMoods,
   getTags,
+  saveTags,
   useEntryTags,
   useInstructors,
   useMoods,
@@ -26,6 +27,7 @@ eventHub.addEventListener("click", (clickEvent) => {
       moodId: parseInt(document.getElementById("moodSelect").value),
       instructorId: parseInt(document.getElementById("instructorSelect").value),
     };
+    checkEntryTags();
     saveJournalEntry(newEntry);
   }
 });
@@ -33,11 +35,24 @@ eventHub.addEventListener("click", (clickEvent) => {
 //TODO!
 //For each tag, check if there is already a tag object in your database with that subject.
 const checkEntryTags = () => {
-  entryTags = document.getElementById("journalTags").value.split(",");
-  entryTags.forEach((newTag) => {
-    //If there isn't, use a POST operation to create one. Capture the id of the newly created tag.
-    tagArray.filter(oldTag);
+  const entryTags = document.getElementById("journalTags").value.split(",");
+  let tagsNotPosted = [];
+  let tagsPosted = [];
+  //If there isn't, use a POST operation to create one. Capture the id of the newly created tag.
+  tagArray.map((oldTag) => {
+    tagsNotPosted = entryTags.filter(
+      (newTag) => newTag.toLowerCase() !== oldTag.subject.toLowerCase()
+    );
     //If there is, get its id.
+    tagsPosted = entryTags.forEach((newTag) => {
+      if (newTag.toLowerCase() === oldTag.subject.toLowerCase()) {
+        console.log(oldTag.id);
+      }
+    });
+  });
+  tagsNotPosted.map((tag) => {
+    const newTagObj = { subject: tag };
+    saveTags(newTagObj);
   });
 };
 
