@@ -45,6 +45,10 @@ const render = () => {
         <h4>Jouranl Entry</h4>
         <textarea id="entryText" cols="30" rows="10"></textarea>
       </div>
+      <div class="journal-entry-item">
+      <label for="tags">Tags</label>
+      <input id="journalTags" type="text">
+    </div>
     </div>
     <div id="entryButton">
     <button type="button" class="btn" id="addJournal">Submit</button>

@@ -24,6 +24,15 @@ eventHub.addEventListener("click", (clickEvent) => {
   }
 });
 
+//For each tag, check if there is already a tag object in your database with that subject.
+const checkEntryTags = () => {
+  entryTags = document.getElementById("journalTags").value.split(",");
+  entryTags.forEach((tag) => {
+    //If there isn't, use a POST operation to create one. Capture the id of the newly created tag.
+    //If there is, get its id.
+  });
+};
+
 export const JournalForm = () => {
   getEntries()
     .then(getInstructors)

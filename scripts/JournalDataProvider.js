@@ -2,6 +2,8 @@ const eventHub = document.querySelector(".container");
 let journalsArray = [];
 let moodsArray = [];
 let instructorsArray = [];
+let tagsArray = [];
+let entryTagsArray = [];
 
 export const useJournalEntries = () => {
   const sortedByDate = journalsArray.sort(
@@ -16,6 +18,13 @@ export const useMoods = () => {
 };
 export const useInstructors = () => {
   return instructorsArray.slice();
+};
+export const useTags = () => {
+  return tagsArray.slice();
+};
+
+export const useEntryTags = () => {
+  return entryTagsArray.slice();
 };
 
 const dispatchStateChangeEvent = () => {
@@ -80,4 +89,36 @@ export const getUpdateEntry = (entryObj, id) => {
   })
     .then(getEntries)
     .then(dispatchStateChangeEvent);
+};
+
+export const getTags = () => {
+  return fetch("http://localhost:8088/tags")
+    .then((response) => response.json())
+    .then((parsedTags) => (tagsArray = parsedTags));
+};
+
+export const saveTags = (newTag) => {
+  fetch("http://localhost:8088/tags", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(newTag),
+  }).then(getTags);
+};
+
+export const getEntryTags = () => {
+  return fetch("http://localhost:8088/entrytags")
+    .then((response) => response.json())
+    .then((parsedEntryTags) => (entrytagsArray = parsedEntryTags));
+};
+
+export const saveEntryTags = (newEntryTag) => {
+  fetch("http://localhost:8088/entrytags", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(newEntryTag),
+  }).then(getTags);
 };
