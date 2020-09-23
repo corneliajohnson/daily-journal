@@ -110,7 +110,7 @@ export const saveTags = (newTag) => {
 export const getEntryTags = () => {
   return fetch("http://localhost:8088/entrytags")
     .then((response) => response.json())
-    .then((parsedEntryTags) => (entrytagsArray = parsedEntryTags));
+    .then((parsedEntryTags) => (entryTagsArray = parsedEntryTags));
 };
 
 export const saveEntryTags = (newEntryTag) => {
