@@ -7,6 +7,7 @@ import {
   saveTags,
   useEntryTags,
   useInstructors,
+  useJournalEntries,
   useMoods,
   useTags,
 } from "../JournalDataProvider.js";
@@ -44,11 +45,11 @@ const checkEntryTags = () => {
       (newTag) => newTag.toLowerCase() !== oldTag.subject.toLowerCase()
     );
     //If there is, get its id.
-    tagsPosted = entryTags.forEach((newTag) => {
-      if (newTag.toLowerCase() === oldTag.subject.toLowerCase()) {
-        console.log(oldTag.id);
-      }
-    });
+    // tagsPosted = entryTags.forEach((newTag) => {
+    //   if (newTag.toLowerCase() === oldTag.subject.toLowerCase()) {
+    //     console.log(oldTag.id);
+    //   }
+    // });
   });
   tagsNotPosted.map((tag) => {
     const newTagObj = { subject: tag };
